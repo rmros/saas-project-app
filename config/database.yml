@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: yaro
+  password: pass
+  host:     <%= ENV['IP'] %>
+
+development:
+  <<: *default
+  database: saas-project-app_development
+
+test:
+  <<: *default
+  database: saas-project-app_test
+
+production:
+  <<: *default
+  database: saas-project-app_production
